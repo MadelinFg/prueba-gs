@@ -4,8 +4,15 @@ import Input from "../comps/Input/Input";
 import InputSelector from "../comps/InputSelector/InputSelector";
 import InputPeopleSelector from "../comps/InputPeopleSelector/InputPeopleSelector";
 import Button from "../comps/Button/Button";
+import { Modal } from "../Modal/Modal";
+import AddModal from "../Modal/AddModal";
+
+import { useModal } from "../../hooks/useModal";
 
 import "./TabDatos.css";
+
+import info from '../../assets/svg/informacion.svg'
+import addIcon from '../../assets/svg/agregar.svg'
 
 function TabDatos() {
     const [ID, setID] = useState("0");
@@ -16,6 +23,8 @@ function TabDatos() {
     const [desc2, setDesc2] = useState("");
     const [initialDate, setInitialDate] = useState("");
     const [finalDate, setFinalDate] = useState("");
+    const [pilarVal, setPilarVal] = useState("");
+    const [clasifVal, setClasifVal] = useState("");
     const [objetivos, setObjetivos] = useState([
         "Selecciona",
         "Objetivo 1",
@@ -32,6 +41,16 @@ function TabDatos() {
         "Madelin Flores",
         "Juan Perez",
     ]);
+    
+    const [isOpen, openModal, closeModal] = useModal(false)
+    
+    const handleSearchProj = () => {
+        alert("Hiciste clic en Buscar proyecto")
+    }
+
+    const handlePriorityProj = () => {
+        alert("Hiciste clic en Prioridad de proyecto")
+    }
 
     return (
         <div className="tab-datos-container">
@@ -68,6 +87,8 @@ function TabDatos() {
                             name="inpt-initial-date"
                             value={initialDate}
                             onChange={(e) => setInitialDate(e.target.value)}
+                            hasIcon
+                            iconSource={info}
                         />
                         <Input
                             type="date"
@@ -75,9 +96,11 @@ function TabDatos() {
                             name="inpt-final-date"
                             value={finalDate}
                             onChange={(e) => setFinalDate(e.target.value)}
+                            hasIcon
+                            iconSource={info}
                         />
                     </div>
-                    <Button text="Prioridad de proyecto" />
+                    <Button text="Prioridad de proyecto" rounded onClick={handlePriorityProj} />
                 </div>
 
                 <div className="column bg-white">
@@ -90,7 +113,7 @@ function TabDatos() {
                             value={IDSpires}
                             onChange={(e) => setIDSpires(e.target.value)}
                         />
-                        <Button text="Buscar proyecto" />
+                        <Button text="Buscar proyecto" rounded onClick={handleSearchProj} />
                     </div>
                     <Input
                         type="text"
@@ -140,17 +163,17 @@ function TabDatos() {
                             lineInput
                             title="Pilar del proyecto"
                             name="inpt-pilar"
-                            value={desc2}
-                            onChange={(e) => setDesc2(e.target.value)}
+                            value={pilarVal}
+                            onChange={(e) => setPilarVal(e.target.value)}
                             disabled
                         />
                         <Input
                             type="text"
                             lineInput
                             title="Clasificación Comité de Inversión"
-                            name="inpt-pilar"
-                            value={desc2}
-                            onChange={(e) => setDesc2(e.target.value)}
+                            name="inpt-clasif"
+                            value={clasifVal}
+                            onChange={(e) => setClasifVal(e.target.value)}
                             disabled
                         />
                     </div>
@@ -161,6 +184,21 @@ function TabDatos() {
                 <InputPeopleSelector title='Responsables del proyecto' options={responsables} />
                 <InputPeopleSelector title='Administrador' options={objetivos} />
                 <InputPeopleSelector title='Involucrados (opcional)' options={objetivos} />
+            </div>
+
+            <div className="stage-container">
+                <Button 
+                    onClick={openModal} 
+                    text="Agregar etapa" 
+                    style="line" 
+                    color="none"
+                    hasIcon
+                    iconRoute={addIcon}
+                />
+
+                <Modal isOpen={isOpen} closeModal={closeModal} title={"Agregar etapa"}>
+                    <AddModal/>
+                </Modal>
             </div>
         </div>
     );
