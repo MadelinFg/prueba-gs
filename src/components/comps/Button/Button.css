@@ -1,0 +1,12 @@
+.button-container {
+    margin: 10px 0;
+}
+
+.simple-button {
+    background-color: var(--main-yellow);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
