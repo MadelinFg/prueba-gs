@@ -1,0 +1,26 @@
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.tab-container .column {
+    min-width: 570px;
+}
+.tab-container .column.bg-white {
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.tab-container-two {
+    display: flex;
+    gap: 40px;
+}
