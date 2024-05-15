@@ -4,7 +4,8 @@
     --gray: #858585;
     --medium-gray: #a5a5a5;
     --light-gray: #eaeaea;
-    --white: #eff5fc;
+    --light-white: #eff5fc;
+    --white: #fff;
 }
 
 * {
@@ -13,10 +14,15 @@
 }
 
 .bg-white {
-    background-color: var(--white);
+    background-color: var(--light-white);
 }
 
 .section {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+select:focus-visible,
+input:focus-visible {
+    outline: none;
 }
