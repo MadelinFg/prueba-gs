@@ -10,7 +10,9 @@ function Header({}) {
                     <img src={hamburguesa} alt="Menu" className='menu-icon' />
                 </div>
                 <div className="home">
-                    <img src={home} alt="Inicio" className='home-icon' />
+                    <a href="#">
+                        <img src={home} alt="Inicio" className='home-icon' />
+                    </a>
                 </div>
             </div>
             <div className="right-section">
