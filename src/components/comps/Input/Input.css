@@ -5,8 +5,15 @@
     width: 100%;
 }
 
-.input-label {
+.input-title {
     margin-bottom: 8px;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.input-label {
+    line-height: 1em;
 }
 
 .input-component {
@@ -22,4 +29,12 @@
     border-right: none;
     border-bottom: 1px solid;
     border-radius: 0;
+}
+
+.input-icon {
+    width: 12px;
+}
+
+.required-text {
+    color: red;
 }

@@ -2,11 +2,35 @@
     margin: 10px 0;
 }
 
-.simple-button {
-    background-color: var(--main-yellow);
+.button {
     border: none;
     padding: 10px 20px;
-    border-radius: 20px;
     cursor: pointer;
     text-wrap: nowrap;
+    background: none;
+}
+
+.yellow-button {
+    background-color: var(--main-yellow);
+}
+
+.white-button {
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+}
+
+.line-button {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: underline;
+}
+
+.btn-rounded {
+    border-radius: 20px;
+}
+
+.button-icon {
+    width: 18px;
 }

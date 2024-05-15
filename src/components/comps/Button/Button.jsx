@@ -1,9 +1,23 @@
-import './Button.css';
+import "./Button.css";
 
-function Button({type, text, disabled, onClick}) {
+function Button({ type = "button", text, disabled, onClick, style, hasIcon, iconRoute, rounded, color = "yellow"}) {
     return (
         <div className="button-container">
-            <button className='simple-button' type={type} disabled={disabled} onClick={onClick}>{text}</button>
+            <button
+                className={`button 
+                ${style === "line" && "line-button"} 
+                ${color === "white" && "white-button"} 
+                ${color === "yellow" && "yellow-button"}
+                ${rounded && "btn-rounded"}`}
+                type={type}
+                disabled={disabled}
+                onClick={onClick}
+            >
+                {hasIcon && (
+                    <img src={iconRoute} alt="Icono" className="button-icon" />
+                )}
+                {text}
+            </button>
         </div>
     );
 }
