@@ -1,0 +1,25 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.input-label {
+    margin-bottom: 8px;
+}
+
+.input-component {
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    padding: 8px 4px;
+}
+
+.line-input {
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
