@@ -3,13 +3,3 @@
     flex-direction: column;
     width: 100%;
 }
-
-.label-select {
-    margin-bottom: 8px;
-}
-
-.input-select {
-    padding: 8px 4px;
-    border: 1px solid var(--medium-gray);
-    border-radius: 8px;
-}

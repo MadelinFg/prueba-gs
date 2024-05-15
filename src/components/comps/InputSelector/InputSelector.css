@@ -13,3 +13,50 @@
     border: 1px solid var(--medium-gray);
     border-radius: 8px;
 }
+
+.select {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    cursor: inherit;
+    z-index: 1;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select,
+&::after {
+    grid-area: select;
+}
+
+.select::after {
+    content: "";
+    justify-self: end;
+    position: absolute;
+    right: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border: solid var(--main-yellow);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
