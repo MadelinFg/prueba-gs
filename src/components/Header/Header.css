@@ -1,0 +1,36 @@
+.header {
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-section {
+    display: flex;
+}
+
+.menu {
+    padding: 15px;
+    background-color: var(--main-yellow);
+    width: 50px;
+}
+.menu-icon {
+    width: 18px;
+}
+
+.home {
+    padding: 10px 15px;
+    border-right: 1px solid var(--gray);
+}
+.home-icon {
+    width: 25px;
+}
+
+.account {
+    padding: 0 16px 0 0;
+}
+.account-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

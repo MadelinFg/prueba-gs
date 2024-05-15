@@ -1,0 +1,16 @@
+.footer {
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 6px 0;
+}
+
+.yellow-divider {
+    background-color: var(--main-yellow);
+    width: 1px;
+}
+
+.footer-text {
+    font-size: 10px;
+}
