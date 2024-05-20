@@ -1,11 +1,11 @@
 import "./Button.css";
 
-function Button({ type = "button", text, disabled, onClick, style, hasIcon, iconRoute, rounded, color = "yellow"}) {
+function Button({ type = "button", text, disabled, onClick, btnStyle, hasIcon, iconRoute, rounded, color = "yellow"}) {
     return (
         <div className="button-container">
             <button
                 className={`button 
-                ${style === "line" && "line-button"} 
+                ${btnStyle === "line" && "line-button"} 
                 ${color === "white" && "white-button"} 
                 ${color === "yellow" && "yellow-button"}
                 ${rounded && "btn-rounded"}`}

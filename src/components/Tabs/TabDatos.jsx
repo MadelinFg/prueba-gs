@@ -27,7 +27,7 @@ function TabDatos() {
     const [finalDate, setFinalDate] = useState("");
     const [pilarVal, setPilarVal] = useState("");
     const [clasifVal, setClasifVal] = useState("");
-    const [objetivos, setObjetivos] = useState([
+    const objetivos = [
         "Selecciona",
         "Objetivo 1",
         "Objetivo 2",
@@ -37,12 +37,12 @@ function TabDatos() {
         "Objetivo 6",
         "Objetivo 7",
         "Objetivo 8",
-    ]);
-    const [responsables, setResponsables] = useState([
+    ];
+    const responsables = [
         "Selecciona",
         "Madelin Flores",
         "Juan Perez",
-    ]);
+    ];
 
     const [isOpen, openModal, closeModal] = useModal(false);
     const [modalTitle, setModalTitle] = useState("");
@@ -350,7 +350,7 @@ function TabDatos() {
                         openModal();
                     }}
                     text="Agregar etapa"
-                    style="line"
+                    btnStyle="line"
                     color="none"
                     hasIcon
                     iconRoute={addIcon}
@@ -411,7 +411,7 @@ function TabDatos() {
                                                 handleEditStage(index)
                                             }
                                             text="Editar"
-                                            style="line"
+                                            btnStyle="line"
                                             color="none"
                                         />
                                     </td>
@@ -421,7 +421,7 @@ function TabDatos() {
                                                 handleDeleteStage(index)
                                             }
                                             text="Eliminar"
-                                            style="line"
+                                            btnStyle="line"
                                             color="none"
                                         />
                                     </td>
@@ -437,7 +437,7 @@ function TabDatos() {
                                 openModal();
                             }}
                             text="Agregar etapa"
-                            style="line"
+                            btnStyle="line"
                             color="none"
                             hasIcon
                             iconRoute={addIcon}
