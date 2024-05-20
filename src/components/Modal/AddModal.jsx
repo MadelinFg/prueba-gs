@@ -1,23 +1,9 @@
-import { useState } from "react";
-
 import Input from "../comps/Input/Input";
 import Button from "../comps/Button/Button";
 
 import infoIcon from '../../assets/svg/informacion.svg'
 
-function AddModal({}) {
-    const [stageTitle, setStageTitle] = useState("");
-    const [stageStage, setStageStage] = useState("");
-    const [initialDate, setInitialDate] = useState("");
-    const [finalDate, setFinalDate] = useState("");
-
-    const handleAdd = () => {
-        alert("Agregar etapa")
-    }
-    const handleCancel = () => {
-        alert("Cancelar")
-    }
-    
+function AddModal({handleMainButton = () => {}, handleSecondaryButton = () => {}, formInputs, mainButtonTitle, secondaryButtonTitle}) {
     return (
         <div className="modal-content-container">
             <div className="inputs-container">
@@ -26,15 +12,23 @@ function AddModal({}) {
                     title="Título de la iniciativa:"
                     required
                     name="inpt-title"
-                    value={stageTitle}
-                    onChange={(e) => setStageTitle(e.target.value)}
+                    value={formInputs.title}
+                    onChange={(e) => formInputs.setStageTitle(e.target.value)}
+                />
+                <Input
+                    type="text"
+                    title="Descripción de la etapa:"
+                    name="inpt-stage"
+                    value={formInputs.description}
+                    onChange={(e) => formInputs.setStageDescription(e.target.value)}
+                    required
                 />
                 <Input
                     type="text"
                     title="Entregable de la etapa:"
                     name="inpt-stage"
-                    value={stageStage}
-                    onChange={(e) => setStageStage(e.target.value)}
+                    value={formInputs.delivery}
+                    onChange={(e) => formInputs.setStageDelivery(e.target.value)}
                     hasIcon
                     iconSource={infoIcon}
                 />
@@ -43,8 +37,8 @@ function AddModal({}) {
                     title="Fecha Inicio:"
                     name="inpt-initial-date"
                     required
-                    value={initialDate}
-                    onChange={(e) => setInitialDate(e.target.value)}
+                    value={formInputs.initialDate}
+                    onChange={(e) => formInputs.setModalInitialDate(e.target.value)}
                     hasIcon
                     iconSource={infoIcon}
                 />
@@ -53,16 +47,16 @@ function AddModal({}) {
                     title="Fecha Fin:"
                     name="inpt-final-date"
                     required
-                    value={finalDate}
-                    onChange={(e) => setFinalDate(e.target.value)}
+                    value={formInputs.finalDate}
+                    onChange={(e) => formInputs.setModalFinalDate(e.target.value)}
                     hasIcon
                     iconSource={infoIcon}
                 />
             </div>
 
             <div className="buttons-container">
-                <Button text="Cancelar" color="white" onClick={handleCancel} />
-                <Button text="Agregar" onClick={handleAdd} />
+                <Button text={secondaryButtonTitle} color="white" onClick={handleSecondaryButton} />
+                <Button text={mainButtonTitle} onClick={handleMainButton} />
             </div>
         </div>
     );

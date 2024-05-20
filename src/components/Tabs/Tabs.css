@@ -32,3 +32,22 @@
     width: 18px;
     fill: var(--gray);
 }
+
+.table-container {
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 32px 16px;
+}
+
+.table-icon {
+    width: 18px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table-column-title {
+    background-color: var(--gray);
+    padding: 6px;
+}
